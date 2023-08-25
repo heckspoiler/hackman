@@ -1,27 +1,49 @@
+body {
+      overflow-y: hidden;
+}
+
 .grid {
       display: flex;
       flex-wrap: wrap;
-      width: 560px;
-      height: 560px;
+      width: calc(1.2 * 560px);
+      height: calc(1.2 * 560px);
       border: 1px solid black;
+      margin: auto;
+      margin-top: 1rem;
+
 }
 
 .grid div {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
 }
 
 .pac-dot {
-      background-color: red;
-      border: 5px solid white;
+
+      background-color: rgba(238, 5, 5, 0.5);
       box-sizing: border-box;
+      border-radius: 10px;
 }
 
 .wall {
-      background-color: blue;
+      --dot-bg: grey;
+      --dot-color: white;
+      --dot-size: 1px;
+      --dot-space: 4px;
+      background:
+            linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+            linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+            var(--dot-color);
 }
 
 .power-pellet {
       background-color: green;
       border-radius: 10px;
+}
+
+.pac-man {
+      background-image: url("./assets/images/carlo.png");
+      background-size: 85%;
+      background-repeat: no-repeat;
+
 }

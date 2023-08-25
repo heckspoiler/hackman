@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (layout[i] === 1) {
         squares[i].classList.add("wall");
       } else if (layout[i] === 2) {
+        squares[i].classList.add("ghost-lair");
+      } else if (layout[i] === 3) {
         squares[i].classList.add("power-pellet");
       }
     }
@@ -66,4 +68,52 @@ document.addEventListener("DOMContentLoaded", function () {
   // add layout to board
 
   createBoard();
+
+  //starting point of hackman
+
+  let pacmanCurrentIndex = 490;
+  squares[pacmanCurrentIndex].classList.add("pac-man");
+
+  // move hackman
+
+  function movePacman(e) {
+    squares[pacmanCurrentIndex].classList.remove("pac-man");
+    switch (e.keyCode) {
+      case 37:
+        if (
+          pacmanCurrentIndex % width !== 0 &&
+          !squares[pacmanCurrentIndex - 1].classList.contains("wall") &&
+          !squares[pacmanCurrentIndex - 1].classList.contains("ghost-lair")
+        )
+          pacmanCurrentIndex -= 1;
+        break;
+      case 38:
+        if (
+          pacmanCurrentIndex - width >= 0 &&
+          !squares[pacmanCurrentIndex - width].classList.contains("wall") &&
+          !squares[pacmanCurrentIndex - width].classList.contains("ghost-lair")
+        )
+          pacmanCurrentIndex -= width;
+        break;
+      case 39:
+        if (
+          pacmanCurrentIndex % width < width - 1 &&
+          !squares[pacmanCurrentIndex + 1].classList.contains("wall") &&
+          !squares[pacmanCurrentIndex + 1].classList.contains("ghost-lair")
+        )
+          pacmanCurrentIndex += 1;
+        break;
+      case 40:
+        if (
+          pacmanCurrentIndex + width < width * width &&
+          !squares[pacmanCurrentIndex + width].classList.contains("wall") &&
+          !squares[pacmanCurrentIndex + width].classList.contains("ghost-lair")
+        )
+          pacmanCurrentIndex += width;
+        break;
+    }
+    squares[pacmanCurrentIndex].classList.add("pac-man");
+  }
+
+  document.addEventListener("keyup", movePacman);
 });
