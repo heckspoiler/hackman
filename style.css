@@ -18,6 +18,13 @@ body {
       height: 24px;
 }
 
+h3 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+}
+
 .pac-dot {
 
       background-color: rgba(238, 5, 5, 0.5);
