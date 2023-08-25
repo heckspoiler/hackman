@@ -53,18 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
       const square = document.createElement("div");
       grid.appendChild(square);
       squares.push(square);
+      if (layout[i] === 0) {
+        squares[i].classList.add("pac-dot");
+      } else if (layout[i] === 1) {
+        squares[i].classList.add("wall");
+      } else if (layout[i] === 2) {
+        squares[i].classList.add("power-pellet");
+      }
     }
   }
 
   // add layout to board
-
-  if (layout[i] === 0) {
-    squares[i].classList.add("pac-dot");
-  } else if (layout[i] === 1) {
-    squares[i].classList.add("wall");
-  } else if (layout[i] === 2) {
-    squares[i].classList.add("power-pellet");
-  }
 
   createBoard();
 });
