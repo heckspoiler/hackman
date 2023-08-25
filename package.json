@@ -1,0 +1,22 @@
+{
+  "name": "hackman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/heckspoiler/hackman.git"
+  },
+  "author": "Carlo Ettisberger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heckspoiler/hackman/issues"
+  },
+  "homepage": "https://github.com/heckspoiler/hackman#readme",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
