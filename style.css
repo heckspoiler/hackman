@@ -52,5 +52,45 @@ h3 {
       background-image: url("./assets/images/carlo.png");
       background-size: 85%;
       background-repeat: no-repeat;
-
+      transition: transform 0.2s ease-in-out;
+      background-position: center;
 }
+
+.ghosts {
+      border-radius: 10px;
+}
+
+.nexty {
+      background-image: url("https://www.svgrepo.com/show/354113/nextjs-icon.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      border: 0px;
+}
+
+.tailwindy {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      border: 0px;
+}
+
+.lazily {
+      background-image: url("https://thenounproject.com/api/private/icons/5997105/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23FFFFFF&backgroundShapeOpacity=1&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 0px;
+}
+
+.confusyus {
+      background-image: url("https://thenounproject.com/api/private/icons/2249969/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23FFFFFF&backgroundShapeOpacity=1&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 0px;
+}
+
+
+.scared-ghost {}

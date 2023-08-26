@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // move hackman
 
   function movePacman(e) {
+    const pacman = document.querySelector(".pac-man");
     squares[pacmanCurrentIndex].classList.remove("pac-man");
     switch (e.keyCode) {
       case 37:
@@ -101,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
           !squares[pacmanCurrentIndex - width].classList.contains("ghost-lair")
         )
           pacmanCurrentIndex -= width;
+
         //check if in exit right
 
         break;
@@ -111,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
           !squares[pacmanCurrentIndex + 1].classList.contains("ghost-lair")
         )
           pacmanCurrentIndex += 1;
+
         if (pacmanCurrentIndex + 1 === 392) {
           pacmanCurrentIndex = 364;
         }
@@ -122,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
           !squares[pacmanCurrentIndex + width].classList.contains("ghost-lair")
         )
           pacmanCurrentIndex += width;
+
         break;
     }
     squares[pacmanCurrentIndex].classList.add("pac-man");
@@ -138,4 +142,26 @@ document.addEventListener("DOMContentLoaded", function () {
       squares[pacmanCurrentIndex].classList.remove("pac-dot");
     }
   }
+
+  class Ghost {
+    constructor(className, startIndex, speed) {
+      this.className = className;
+      this.startIndex = startIndex;
+      this.speed = speed;
+      this.currentIndex = startIndex;
+      this.timerId = NaN;
+    }
+  }
+
+  ghosts = [
+    new Ghost("nexty", 348, 500),
+    new Ghost("tailwindy", 376, 400),
+    new Ghost("confusyus", 351, 200),
+    new Ghost("lazily", 379, 280),
+  ];
+
+  ghosts.forEach((ghost) => {
+    squares[ghost.currentIndex].classList.add(ghost.className);
+    squares[ghost.currentIndex].classList.add("ghost");
+  });
 });
